@@ -14,7 +14,7 @@ def app():
     
     db_file = r'./apps/data/Doctorsdb.db'
     engine = create_engine(r"sqlite:///{}" .format(db_file))
-    sql = 'SELECT * from  Doctor'
+    sql = 'SELECT * from  Doctors'
     
     data_df = pd.read_sql(sql, engine)
     
