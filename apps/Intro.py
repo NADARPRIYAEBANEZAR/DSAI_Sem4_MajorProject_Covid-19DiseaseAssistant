@@ -11,17 +11,17 @@ from PIL import Image
 def app():
     
     st.sidebar.markdown("<br>",unsafe_allow_html=True)
-    image = Image.open('files/wuhan.JPG')
+    image = Image.open('C:/Users/Priya/OneDrive/Documents/MSCSEM4/COVID-19 Detector/files/wuhan.jpg')
     st.sidebar.image(image,width=250)
     st.sidebar.markdown("<br>",unsafe_allow_html=True)
-    image = Image.open('files/Capture2.JPG')
+    image = Image.open('C:/Users/Priya/OneDrive/Documents/MSCSEM4/COVID-19 Detector/files/Capture2.jpg')
     st.sidebar.image(image,width=250)
     st.sidebar.markdown("<br>",unsafe_allow_html=True)
-    file_ = open("files/giphy.gif", "rb")
+    file_ = open("C:/Users/Priya/OneDrive/Documents/MSCSEM4/COVID-19 Detector/files/giphy.gif", "rb")
     contents = file_.read()
     data_url = base64.b64encode(contents).decode("utf-8")
     file_.close()
-    st.markdown("<marquee style='width:100%; direction:left;height:100%;color: black; font-weight: bold;behavior:scroll;'>WELCOME TO THE COVID-19 DISEASE ASSISTANT WEBSITE!!!</marquee>",unsafe_allow_html=True)
+    st.markdown("<marquee style='width:100%; direction:left;height:100%;color: black; font-weight: bold;behavior:scroll;'>WELCOME TO THE COVID-19 DISEASE ASSISTANT WEBSITE !!!</marquee>",unsafe_allow_html=True)
     
     temp = """
 
@@ -46,7 +46,7 @@ def app():
         
       </div>
        <div class="item">
-          <img src="https://www.who.int/images/default-source/health-topics/coronavirus/myth-busters/mythbuster-bacteria-vs-virus.png?sfvrsn=ff438da4_4" style="display: block; margin-left: auto; margin-right: auto; width: 50%;">
+          <img src="https://static.india.com/wp-content/uploads/2020/12/Coronavirus-vaccine-dry-run.png?impolicy=Medium_Resize&w=1200&h=800" style="display: block; margin-left: auto; margin-right: auto; width: 50%;">
         
       </div>
       
@@ -54,20 +54,20 @@ def app():
      
     
       <div class="item">
-        <img src="https://bloximages.newyork1.vip.townnews.com/lancasteronline.com/content/tncms/assets/v3/editorial/a/c2/ac220872-5fcf-11ea-91be-c31fd84e809e/5e78fe3ab50cc.image.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 50%;">
+        <img src="https://media1.thehungryjpeg.com/thumbs2/800_3741120_cfsrka1k1ub99arb3s9afbtrdkxpnvoz6yzx2hpi_watercolor-quarantine-virus-self-isolation-epidemic-covid-clipart-png.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 50%;">
         
       </div>
        <div class="item">
-          <img src="https://ichef.bbci.co.uk/news/640/cpsprodpb/8F87/production/_111334763_what_we_need_to_do_cps_poster-nc.png" style="display: block; margin-left: auto; margin-right: auto; width: 50%;">
+          <img src="https://img.freepik.com/free-vector/get-your-vaccine-font-with-many-kids-waiting-queue-get-covid-19-vaccine_1308-59879.jpg?w=2000" style="display: block; margin-left: auto; margin-right: auto; width: 50%;">
         
       </div>
       
   <div class="item">
-          <img src="https://blog.mygov.in/wp-content/uploads/2020/04/inside-image-1.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 50%;">
+          <img src="https://cdn3.vectorstock.com/i/1000x1000/70/97/coronavirus-poster-design-with-sick-children-vector-30427097.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 50%;">
         
       </div>
         <div class="item">
-          <img src="https://tnou.ac.in/wp-content/uploads/2021/04/c19-Eng-02-a4.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 50%;">
+          <img src="https://asset-a.grid.id/crop/0x0:0x0/700x465/photo/2020/07/06/3498610560.png" style="display: block; margin-left: auto; margin-right: auto; width: 50%;">
         
       </div>
         
@@ -89,7 +89,7 @@ def app():
 
     with col1:
         
-        image = Image.open('files/save.JPG')
+        image = Image.open('C:/Users/Priya/OneDrive/Documents/MSCSEM4/COVID-19 Detector/files/save.jpg')
 
         st.image(image,use_column_width=True)
         
@@ -117,8 +117,8 @@ def app():
 	      <div class="row">
 	        <div class="col l6 s12">
 	          <h5 class="white-text">CONTACT US</h5>
-	          <p class="grey-text text-lighten-4">Address : ABC Building, 361 Strawberry Road, Mumabi-22</p>
-               <p class="grey-text text-lighten-4">Mobile : (+91) 9991288867</p>
+	          <p class="grey-text text-lighten-4">Address : Twinkle Building, 361 Strawberry Road, Mumabi-22</p>
+               <p class="grey-text text-lighten-4">Mobile : (+91) 9988112290</p>
                 <p class="grey-text text-lighten-4">Mail To : adamincda@gmail.com</p>
 
 
@@ -128,7 +128,7 @@ def app():
 	          <h5 class="white-text">Connect With Me</h5>
 	          <ul>
 	           
-	           <a href="https://github.com/Jcharis/" target="_blank" class="white-text">
+	           <a href="https://github.com/NADARPRIYAEBANEZAR" target="_blank" class="white-text">
 	            <i class="fab fa-github-square fa-4x"></i>
 	          </a>
 	          </ul>
