@@ -11,6 +11,7 @@ from PIL import Image
 def app():
     
     st.sidebar.markdown("<br>",unsafe_allow_html=True)
+    
     image = Image.open('files/wuhan.JPG')
     st.sidebar.image(image,width=250)
     st.sidebar.markdown("<br>",unsafe_allow_html=True)
