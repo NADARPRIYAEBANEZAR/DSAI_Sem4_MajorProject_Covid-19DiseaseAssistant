@@ -65,9 +65,9 @@ def app():
         regex1 = re.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!#%*?&]{6,20}$")
         return regex1.match(passwd)
     def log_userlogin():
-     	c.execute('CREATE TABLE IF NOT EXISTS logs1(Name TEXT NOT NULL ,LoginDate DATE NOT NULL)')
-    def add_loguser(name,date1):
-     	c.execute('INSERT INTO logs(UserId,LoginDate ) VALUES (?,?)',(userid1,date1))
+     	c.execute('CREATE TABLE IF NOT EXISTS loguser(UserId TEXT NOT NULL ,LoginDate DATE NOT NULL)')
+    def add_loguser(userid1,date1):
+     	c.execute('INSERT INTO loguser(UserId,LoginDate ) VALUES (?,?)',(userid1,date1))
      	conn.commit()
     
     
