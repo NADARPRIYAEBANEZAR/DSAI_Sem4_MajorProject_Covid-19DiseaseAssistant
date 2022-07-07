@@ -22,10 +22,10 @@ def app():
     #db_file = r'./User/data.db'
         db_file = r'./apps/data/Userdb.db'
         engine = create_engine(r"sqlite:///{}" .format(db_file))
-        sql = 'SELECT UserId,LoginDate, count(userid) FROM logs GROUP BY LoginDate,UserId ORDER BY LoginDate'
+        sql = 'SELECT UserId,LoginDate, count(UserId) FROM loguser GROUP BY LoginDate,UserId ORDER BY LoginDate'
         
         data_df = pd.read_sql(sql, engine)
-        data_df.rename(columns = {'count(userid)':'Count'}, inplace = True)
+        data_df.rename(columns = {'count(UserId)':'Count'}, inplace = True)
         st.dataframe(data_df,1000,1000)
     elif dt=='Visual Data Analysis':
         data_df = data_df.groupby('LoginDate').count().reset_index()
