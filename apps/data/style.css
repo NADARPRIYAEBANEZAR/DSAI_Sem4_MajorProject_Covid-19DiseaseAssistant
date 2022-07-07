@@ -1,0 +1,27 @@
+a.down:link, a.down:visited {
+  background-color: blue;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+a.down:hover, a.down:active {
+opacity: 1
+}
+
+.btn{
+
+   float:left;
+}
+
+
+
+
+
