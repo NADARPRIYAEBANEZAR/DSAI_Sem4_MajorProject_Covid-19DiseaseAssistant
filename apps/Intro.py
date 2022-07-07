@@ -11,13 +11,13 @@ from PIL import Image
 def app():
     
     st.sidebar.markdown("<br>",unsafe_allow_html=True)
-    image = Image.open('C:/Users/Priya/OneDrive/Documents/MSCSEM4/COVID-19 Detector/files/wuhan.jpg')
+    image = Image.open('files/wuhan.JPG')
     st.sidebar.image(image,width=250)
     st.sidebar.markdown("<br>",unsafe_allow_html=True)
-    image = Image.open('C:/Users/Priya/OneDrive/Documents/MSCSEM4/COVID-19 Detector/files/Capture2.jpg')
+    image = Image.open('files/Capture2.JPG')
     st.sidebar.image(image,width=250)
     st.sidebar.markdown("<br>",unsafe_allow_html=True)
-    file_ = open("C:/Users/Priya/OneDrive/Documents/MSCSEM4/COVID-19 Detector/files/giphy.gif", "rb")
+    file_ = open("files/giphy.gif", "rb")
     contents = file_.read()
     data_url = base64.b64encode(contents).decode("utf-8")
     file_.close()
@@ -89,7 +89,7 @@ def app():
 
     with col1:
         
-        image = Image.open('C:/Users/Priya/OneDrive/Documents/MSCSEM4/COVID-19 Detector/files/save.jpg')
+        image = Image.open('files/save.JPG')
 
         st.image(image,use_column_width=True)
         
