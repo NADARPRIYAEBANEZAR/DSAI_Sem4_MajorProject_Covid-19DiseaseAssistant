@@ -136,7 +136,7 @@ def app():
                                             st.markdown(get_table_download_link(new_df,area_pin+ '_' + new_date.replace('-',
                                                                                                                                         '_') + '.csv','Download Report'), unsafe_allow_html=True)
                                            
-                                            href = f'<a class="down , btn" href="https://selfregistration.cowin.gov.in/">Book Slot</a>'
+                                            href = f'<a class="down , btn" href="https://selfregistration.cowin.gov.in/" target="_blank">Book Slot</a>'
                                             st.markdown(href, unsafe_allow_html=True)
                                             
                                             
