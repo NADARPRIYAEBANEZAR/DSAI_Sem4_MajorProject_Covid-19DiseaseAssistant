@@ -12,7 +12,7 @@ from email.mime.multipart import MIMEMultipart
 import re
 import pandas as pd
 def app():
-    st.markdown("<marquee style='width:100%; direction:left;height:100%;color: black; font-weight: bold;behavior:scroll;'>WELCOME TO THE COVID-19 DISEASE ASSISTANT WEBSITE!!!</marquee>",unsafe_allow_html=True)
+    st.markdown("<marquee style='width:100%; direction:left;height:100%;color: black; font-weight: bold;behavior:scroll;'>WELCOME TO THE COVID-19 DISEASE ASSISTANT WEBSITE !!!</marquee>",unsafe_allow_html=True)
     
     image = Image.open('files/feed.png')
 
