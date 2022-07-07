@@ -14,7 +14,7 @@ warnings.filterwarnings('ignore')
 import base64
 
 def app():
-    st.markdown("<marquee style='width:100%; direction:left;height:100%;color: black; font-weight: bold;behavior:scroll;'>WELCOME TO THE COVID-19 DISEASE ASSISTANT WEBSITE!!!</marquee>",unsafe_allow_html=True)
+    st.markdown("<marquee style='width:100%; direction:left;height:100%;color: black; font-weight: bold;behavior:scroll;'>WELCOME TO THE COVID-19 DISEASE ASSISTANT WEBSITE !!!</marquee>",unsafe_allow_html=True)
     training_data_quesans = open('apps/data/covid.txt',encoding='utf-8').read().splitlines()
 
     
