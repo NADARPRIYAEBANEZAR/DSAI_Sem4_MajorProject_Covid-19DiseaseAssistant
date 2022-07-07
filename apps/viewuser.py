@@ -22,7 +22,7 @@ def app():
     #db_file = r'./User/data.db'
         db_file = r'./apps/data/Userdb.db'
         engine = create_engine(r"sqlite:///{}" .format(db_file))
-        sql = 'SELECT Name,LoginDate, count(name) FROM logs1 GROUP BY LoginDate,Name ORDER BY LoginDate'
+        sql = 'SELECT Name,LoginDate, count(name) FROM logs GROUP BY LoginDate,Name ORDER BY LoginDate'
         
         data_df = pd.read_sql(sql, engine)
         data_df.rename(columns = {'count(name)':'Count'}, inplace = True)
