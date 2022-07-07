@@ -67,7 +67,7 @@ def app():
     def log_userlogin():
      	c.execute('CREATE TABLE IF NOT EXISTS logs1(Name TEXT NOT NULL ,LoginDate DATE NOT NULL)')
     def add_loguser(name,date1):
-     	c.execute('INSERT INTO logs1(Name,LoginDate ) VALUES (?,?)',(name,date1))
+     	c.execute('INSERT INTO logs(UserId,LoginDate ) VALUES (?,?)',(userid1,date1))
      	conn.commit()
     
     
@@ -100,6 +100,12 @@ def app():
                      else:
                          create_usertable()
                          result = login_user(userid1,password1)
+                         IST = pytz.timezone('Asia/Kolkata')
+                    #date1=datetime.date.today()
+                         datetime_ist = datetime.now(IST)
+                         date1=datetime_ist.strftime('%Y:%m:%d')
+                         log_userlogin()
+                         add_loguser(userid1,date1)
                          
                          if result:
                             r=select_user(userid1,)
@@ -110,12 +116,7 @@ def app():
                             
                             namelog=clist[0]
                             st.success("Logged In as {}".format(namelog))
-                            IST = pytz.timezone('Asia/Kolkata')
-                    #date1=datetime.date.today()
-                            datetime_ist = datetime.now(IST)
-                            date1=datetime_ist.strftime('%Y:%m:%d')
-                            log_userlogin()
-                            add_loguser(namelog,date1)
+                            
                             
                             app = MultiApp()
                            
