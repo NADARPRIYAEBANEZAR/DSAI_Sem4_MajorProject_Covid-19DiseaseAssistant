@@ -7,7 +7,7 @@ Created on Wed May 25 18:59:41 2022
 from PIL import Image
 import streamlit as st
 def app():
-    st.markdown("<marquee style='width:100%; direction:left;height:100%;color: black; font-weight: bold;behavior:scroll;'>WELCOME TO THE ADMIN PANEL!!!</marquee>",unsafe_allow_html=True)
+    st.markdown("<marquee style='width:100%; direction:left;height:100%;color: black; font-weight: bold;behavior:scroll;'>WELCOME TO THE ADMIN PANEL !!!</marquee>",unsafe_allow_html=True)
     
     from apps import adddoct,viewuser,viewfeedback,viewQueries
     from multiapp import MultiApp
