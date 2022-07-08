@@ -26,15 +26,15 @@ def app():
         image = Image.open('files/userlog.png')
 
         st.sidebar.image(image,width=150)
-    conn = my.connect('apps/data/Userdb.db')
+    conn = my.connect('./apps/data/Users1db.db')
     c = conn.cursor()
      
     
     
     def create_usertable():
-     	c.execute('CREATE TABLE IF NOT EXISTS Userstable(Name TEXT NOT NULL,Address TEXT NOT NULL, Mobile TEXT NOT NULL UNIQUE,Email TEXT NOT NULL UNIQUE,Gender TEXT NOT NULL,Password TEXT NOT NULL)')
-    def add_userdata(name,address,mobile,email,gender,password1):
-     	c.execute('INSERT INTO Userstable(Name,Address,Mobile ,Email  ,Gender,Password ) VALUES (?,?,?,?,?,?)',(name,address,mobile,email,gender,password1))
+     	c.execute('CREATE TABLE IF NOT EXISTS Userstable(Name TEXT NOT NULL,Address TEXT NOT NULL, Mobile TEXT NOT NULL UNIQUE,Email TEXT NOT NULL UNIQUE,Gender TEXT NOT NULL,Password TEXT NOT NULL,RegisterDate DATE NOT NULL)')
+    def add_userdata(name,address,mobile,email,gender,password1,date1):
+     	c.execute('INSERT INTO Userstable(Name,Address,Mobile ,Email  ,Gender,Password,RegisterDate ) VALUES (?,?,?,?,?,?,?)',(name,address,mobile,email,gender,password1,date1))
      	conn.commit()
     def login_user(email,password1):
      	c.execute('SELECT * FROM Userstable WHERE Email =? AND Password = ?',(email,password1))
@@ -48,10 +48,6 @@ def app():
      	c.execute('SELECT * FROM Userstable')
      	data = c.fetchall()
      	return data
-    # def view_log():
-    #  	c.execute('SELECT * FROM logs')
-    #  	data = c.fetchall()
-    #  	return data
     def isValid(s):
         Pattern = re.compile("(0|91)?[7-9][0-9]{9}")
         return Pattern.match(s)
@@ -64,11 +60,6 @@ def app():
     def isValidpass(passwd):
         regex1 = re.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!#%*?&]{6,20}$")
         return regex1.match(passwd)
-    def log_userlogin():
-     	c.execute('CREATE TABLE IF NOT EXISTS loguser(UserId TEXT NOT NULL ,LoginDate DATE NOT NULL)')
-    def add_loguser(userid1,date1):
-     	c.execute('INSERT INTO loguser(UserId,LoginDate ) VALUES (?,?)',(userid1,date1))
-     	conn.commit()
     
     
     
@@ -100,13 +91,6 @@ def app():
                      else:
                          create_usertable()
                          result = login_user(userid1,password1)
-                         IST = pytz.timezone('Asia/Kolkata')
-                    #date1=datetime.date.today()
-                         datetime_ist = datetime.now(IST)
-                         date1=datetime_ist.strftime('%Y:%m:%d')
-                         log_userlogin()
-                         add_loguser(userid1,date1)
-                         
                          if result:
                             r=select_user(userid1,)
                             
@@ -116,7 +100,6 @@ def app():
                             
                             namelog=clist[0]
                             st.success("Logged In as {}".format(namelog))
-                            
                             
                             app = MultiApp()
                            
@@ -166,13 +149,18 @@ def app():
                     password1 = st.text_input("Your Password",type='password')
                     # it will get the time zone
                     # of the specified location
-                   
+                    IST = pytz.timezone('Asia/Kolkata')
+                    #date1=datetime.date.today()
+                    datetime_ist = datetime.now(IST)
+                    date1=datetime_ist.strftime('%Y:%m:%d')
 
          
                     
             
                     
                     cy=st.form_submit_button("Signup")
+                    
+                    
                     
                     
                     email_from = 'coviddiseaseassistant@gmail.com'
@@ -217,7 +205,7 @@ def app():
                         
                         try:
                             create_usertable()
-                            add_userdata(name,address,mobile,email,gender,password1)
+                            add_userdata(name,address,mobile,email,gender,password1,date1)
                             mail = smtplib.SMTP('smtp.gmail.com', 587)
                             mail.ehlo()
                             mail.starttls()
@@ -255,19 +243,6 @@ def app():
                     st.button("Reset")
     main()
             
-                    
-                    
-                        
-                
-          
-                
-                    
-    
-    
-    
-    
-    
-    
     
     	
     		
