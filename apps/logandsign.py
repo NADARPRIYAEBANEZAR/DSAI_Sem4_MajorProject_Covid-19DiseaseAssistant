@@ -69,10 +69,10 @@ def app():
     def main():
         
         
-        menu = ["Login","SignUp"]
+        menu = ["SignIn","SignUp"]
         choice = st.sidebar.selectbox("Menu",menu)
             
-        if choice == "Login":
+        if choice == "SignIn":
                 col1, col2, col3,col4,col5= st.columns(5)
                 
                 with col5:
